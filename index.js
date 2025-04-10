@@ -19,7 +19,7 @@ const axios = require('axios')
 const { File } = require('megajs')
 const prefix = '.'
 
-const ownerNumber = ['94779415698']
+const ownerNumber = ['94761480834']
 
 //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
@@ -69,9 +69,23 @@ require("./plugins/" + plugin);
 console.log('Plugins installed successful ✅')
 console.log('Bot connected to whatsapp ✅')
 
-let up = `Wa-BOT connected successful ✅\n\nPREFIX: ${prefix}`;
+let up = `
+*╭─〔 𝗤𝘶𝘦𝘦𝘯ₓ* ```THISHU``` *-𝗠𝗗 V1.0*
+*╰──────────────*
+╔
+   𝕎𝔼𝕃𝕃ℂ𝕆𝕄𝔼 𝕋𝕆 𝕐𝕆𝕌..🫂
+                          ╝
+> 𝚃𝙷𝙸𝚂 𝙸𝚂 𝚈𝙾𝚄𝚁 𝐏𝐑𝐄𝐅𝐈𝐗👇
+* ${prefix}
 
-conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://telegra.ph/file/900435c6d3157c98c3c88.jpg` }, caption: up })
+
+
+━━━━━━❮☎️❯━━━━━━
+
+⚜.```https://Wa.me//+94761480834```
+`;
+
+conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://ibb.co/mrKXJ2mL` }, caption: up })
 
 }
 })
