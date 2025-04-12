@@ -22,19 +22,22 @@ const prefix = '.'
 const ownerNumber = ['94761480834']
 
 //===================SESSION-AUTH============================
-if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
-if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
-const sessdata = config.SESSION_ID
-const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
-filer.download((err, data) => {
-if(err) throw err
-fs.writeFile(__dirname + '/auth_info_baileys/creds.json', data, () => {
-console.log("Session downloaded ✅")
-})})}
-
-const express = require("express");
-const app = express();
-const port = process.env.PORT || 8000;
+const SESSION_DIR = `./session`;
+    if (!fs.existsSync(SESSION_DIR)) {
+        fs.mkdirSync(SESSION_DIR);
+      }
+if (!fs.existsSync(__dirname + `/session/creds.json`)) {
+    const sessdata = config.SESSION_ID.replace("PRABATH-MD~", "")
+      const sessdata = sessionID
+      const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
+      filer.download((err, data) => {
+        if (err) throw err
+        fs.writeFile(__dirname + `/session/creds.json`, data, () => {
+          console.log("Session download completed !!")
+        })
+      })
+    
+}
 
 //=============================================
 
